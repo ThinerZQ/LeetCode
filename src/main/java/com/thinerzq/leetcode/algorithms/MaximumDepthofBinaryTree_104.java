@@ -41,12 +41,13 @@ public class MaximumDepthofBinaryTree_104 {
     public int maxValue(int m,int n){
         return m>n?m:n;
     }
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+
+    }
 }
 
- class TreeNode {
-     int val;
-     TreeNode left;
-     TreeNode right;
-     TreeNode(int x) { val = x; }
 
- }
