@@ -10,9 +10,6 @@ package com.thinerzq.leetcode.algorithms;
  * Email: 601097836@qq.com
  */
 
-import sun.reflect.generics.tree.Tree;
-
-import javax.swing.tree.TreeNode;
 
 /**
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
@@ -40,43 +37,41 @@ public class LowestCommonAncestorOfABinarySearchTree_235 {
             return null;
         }
 
+
+        if(p ==null && q== null){
+            return null;
+        }else if (p==null){
+            return q;
+        }else if (q == null){
+            return p;
+        }
+
+
         if (treeNode.val == p.val && treeNode.val == q.val){
             return treeNode;
-        }else if (treeNode.val == p.val){
-            //query
-            if (containNode(treeNode,q)){
+        }else if (treeNode.val == p.val || treeNode.val == q.val) {
+            return treeNode;
+        } else{
+            if (containNode(treeNode.left,p,q)){
+                // recursive left
+                return lowestCommonAncestor(treeNode.left,p,q);
+            }else if (containNode(treeNode.right,p,q)){
+                //recursive right
+                return lowestCommonAncestor(treeNode.right,p,q);
+            }else if ((containNode(treeNode.left,p) && containNode(treeNode.right,q)) || (containNode(treeNode.left,q) && containNode(treeNode.right,p))){
                 return treeNode;
             }else{
                 return null;
             }
-        }else if (treeNode.val == q.val) {
-            //query
-            if (containNode(treeNode,p)){
-                return treeNode;
-            }else{
-                return null;
-            }
-        }else{
-                TreeNode leftResult = lowestCommonAncestor(root.left,p,q);
-                if ( leftResult== null){
-                    TreeNode rightResult = lowestCommonAncestor(root.right,p,q);
-                    if (rightResult==null){
-                        return root;
-                    }else{
-                        return rightResult;
-                    }
-                }else{
-                    return leftResult;
-                }
-
-            }
+        }
 
     }
     public static boolean containNode(TreeNode root,TreeNode node){
 
         TreeNode temp = root;
+
         if (temp!=null){
-            if (root.val == node.val){
+            if (temp.val == node.val){
                 return true;
             }else{
                 boolean left  = containNode(temp.left,node);
@@ -95,6 +90,13 @@ public class LowestCommonAncestorOfABinarySearchTree_235 {
             return false;
         }
 
+
+    }
+    public static boolean containNode(TreeNode root,TreeNode p,TreeNode q){
+
+        TreeNode temp = root;
+
+        return containNode(temp,p) && containNode(temp,q);
 
     }
     private static class TreeNode {
