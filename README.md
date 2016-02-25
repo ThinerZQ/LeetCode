@@ -13,3 +13,15 @@
 | 9    | 283    |   Move Zeroes   |
 | 10    | 206    |   Reverse Linkedlist  |
 | 11    | 100    |   Same Tree  |
+| 12    | 70    |   Climbing Stairs  |
+| 13    | 202    |   Happy Number  |
+| 14    | 235    |   Lovest Commons Ancestor of a BinarySearch Tree  |
+| 15    | 191    |   Number of 1Bits  |
+| 16    | 258    |   Odd Event LinkedList  |
+| 17    | 326    |   Power of the three  |
+| 18    | 231    |    Power of the two  |
+| 19    | 136    |   Single Number  |
+| 20    | 263    |   Ugly Number  |
+| 21    | 242    |   Valid Anagram  |
+
+### update 2016-02-25
