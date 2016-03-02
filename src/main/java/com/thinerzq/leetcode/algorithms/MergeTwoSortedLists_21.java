@@ -15,8 +15,54 @@ public class MergeTwoSortedLists_21 {
     }
     public ListNode mergeTwoLists(ListNode first, ListNode two) {
 
+        if (first ==null && two ==null){
+            return null;
+        }else if (first == null){
+            return two;
+        }else if (two == null){
+            return first;
+        }else{
+            ListNode firstIndex = first;
+            ListNode twoIndex = two;
+            boolean flag = false;
+            while (firstIndex != null && twoIndex != null){
+                ListNode firstNext = firstIndex.next;
+                ListNode twoNext = twoIndex.next;
 
-        return null;
+
+
+                if (firstIndex.val < twoIndex.val){
+                    if (firstNext != null && firstNext.val <= twoIndex.val){
+                        firstIndex = firstNext;
+                        flag = true;
+                        continue;
+                    }
+                    firstIndex.next =twoIndex;
+                    firstIndex = firstNext;
+                    flag = true;
+                }else if (firstIndex.val > twoIndex.val){
+                    if (twoNext != null && twoNext.val <= firstIndex.val){
+                        twoIndex = twoNext;
+                        flag = false;
+                        continue;
+                    }
+                    twoIndex.next = firstIndex;
+                    twoIndex = twoNext;
+                    flag = false;
+                }else{
+                    if (flag){
+                        firstIndex.next = twoIndex;
+                    }else{
+                        twoIndex.next = firstIndex;
+                    }
+                    firstIndex = firstNext;
+                    twoIndex = twoNext;
+                }
+            }
+
+            return first.val < two.val ? first : two;
+        }
+
     }
 
     private class ListNode {
