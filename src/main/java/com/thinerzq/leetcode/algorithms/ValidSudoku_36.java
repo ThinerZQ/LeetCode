@@ -25,10 +25,10 @@ public class ValidSudoku_36 {
             int count=0;
             for (int j = 0; j <col; j++) {
                 for (int k = 0; k <row; k++) {
-                    if (board[9-i-1][j*3+k] !='.')
-                        rows.add(board[9-i-1][j*3+k]);
-                    if (board[j*3+k][9-i-1] !='.')
-                        cols.add(board[j*3+k][9-i-1]);
+                    if (board[i+j][j*3+k] !='.')
+                        rows.add(board[i+j][j*3+k]);
+                    if (board[j*3+k][i+j] !='.')
+                        cols.add(board[j*3+k][i+j]);
                     if (board[i][count] !='.')
                         cells.add(board[i][count++]);
                 }
