@@ -19,11 +19,11 @@ public class MergeSortedArray_88 {
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
 
         for (int i = 0; i < n; i++) {
-            //二分查找插入位置
+            //binary search
             int left=0;
             int right=m-1;
             int mid =(left+right)/2;
-            while (left<=right){
+            while (left<right){
                     if (nums2[i] >nums1[mid]){
                         left = mid+1;
                     }else if (nums2[i] <nums1[mid]){
@@ -35,6 +35,17 @@ public class MergeSortedArray_88 {
                 nums1[j] = nums1[j-1];
             }
             nums1[mid] = nums2[i];
+        }
+    }
+    public static void merge_1(int[] nums1, int m, int[] nums2, int n) {
+
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m;) {
+                if (nums1[j]>nums2[i]){
+                    j++;
+                }
+            }
         }
     }
 }

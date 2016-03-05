@@ -1,5 +1,7 @@
 package com.thinerzq.leetcode.algorithms;
 
+import java.util.Date;
+
 /**
  * Created with IntelliJ IDEA
  * Date: 2016/2/25
@@ -11,12 +13,19 @@ package com.thinerzq.leetcode.algorithms;
  */
 public class UglyNumber_263 {
     public static void main(String[] args) {
-        System.out.println(isUgly(2));
 
-        System.out.println(2%4);
+        int count=0;
+        System.out.println(new Date());
+        for (int i = 0; count<100 ; i++) {
+            if (isUgly(i)) {
+                ++count;
+            }
+        }
+        System.out.println(new Date());
 
     }
     public  static boolean isUgly(int num) {
+
         if( num <=0){
             return false;
         }else if (num == 1 || num == 2 || num == 3 || num == 5){
