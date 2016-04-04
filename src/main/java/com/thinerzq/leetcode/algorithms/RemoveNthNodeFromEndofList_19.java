@@ -12,28 +12,28 @@ package com.thinerzq.leetcode.algorithms;
 public class RemoveNthNodeFromEndofList_19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
-        if(head == null){
+        if (head == null) {
             return null;
         }
-        ListNode next =head;
-        ListNode pre =head;
+        ListNode next = head;
+        ListNode pre = head;
 
         for (int i = 0; i < n; i++) {
             next = next.next;
         }
 
-        if (next ==null){
+        if (next == null) {
             head = head.next;
             return head;
         }
 
-        while (next.next != null){
-            next= next.next;
+        while (next.next != null) {
+            next = next.next;
             pre = pre.next;
         }
         ListNode temp = pre.next.next;
         pre.next = temp;
-        return  head;
+        return head;
 
     }
 

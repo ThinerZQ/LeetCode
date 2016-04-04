@@ -13,20 +13,21 @@ public class AddDigits_258 {
     public static void main(String[] args) {
         AddDigits_258 addDigits_258 = new AddDigits_258();
 
-        int n=235967104;
+        int n = 235967104;
         int result = addDigits_258.addDigits(n);
-        System.out.println("n = "+ n +" ,result = "+result );
+        System.out.println("n = " + n + " ,result = " + result);
     }
+
     public int addDigits(int num) {
 
         String strNum = String.valueOf(num);
         String[] tempStr = strNum.split("");
-        int sum=0;
-        for (int i=0;i<tempStr.length;i++){
+        int sum = 0;
+        for (int i = 0; i < tempStr.length; i++) {
             System.out.println(tempStr[i]);
-            sum+=Integer.parseInt(tempStr[i]);
+            sum += Integer.parseInt(tempStr[i]);
         }
-        if (sum<10)
+        if (sum < 10)
             return sum;
         else
             return addDigits(sum);

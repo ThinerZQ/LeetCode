@@ -14,9 +14,9 @@ import java.util.Date;
 public class UglyNumber_263 {
     public static void main(String[] args) {
 
-        int count=0;
+        int count = 0;
         System.out.println(new Date());
-        for (int i = 0; count<100 ; i++) {
+        for (int i = 0; count < 100; i++) {
             if (isUgly(i)) {
                 ++count;
             }
@@ -24,21 +24,22 @@ public class UglyNumber_263 {
         System.out.println(new Date());
 
     }
-    public  static boolean isUgly(int num) {
 
-        if( num <=0){
+    public static boolean isUgly(int num) {
+
+        if (num <= 0) {
             return false;
-        }else if (num == 1 || num == 2 || num == 3 || num == 5){
+        } else if (num == 1 || num == 2 || num == 3 || num == 5) {
             return true;
         }
 
-        if (num % 2 ==0){
-            return isUgly(num/2);
-        }else if (num %3 ==0){
-            return isUgly(num/3);
-        }else  if (num %5 ==0){
-            return isUgly(num/5);
-        }else{
+        if (num % 2 == 0) {
+            return isUgly(num / 2);
+        } else if (num % 3 == 0) {
+            return isUgly(num / 3);
+        } else if (num % 5 == 0) {
+            return isUgly(num / 5);
+        } else {
             return false;
         }
     }

@@ -22,15 +22,16 @@ public class ContainsDuplicate_217 {
 
         ContainsDuplicate_217.containsDuplicate(new int[]{1, 2, 3, 4});
     }
+
     public static boolean containsDuplicate(int[] nums) {
 
         HashSet hashSet = new HashSet();
-        for (int temp:nums){
+        for (int temp : nums) {
             hashSet.add(temp);
         }
-        if (hashSet.size() == nums.length){
+        if (hashSet.size() == nums.length) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }

@@ -17,19 +17,20 @@ public class MoveZeroes_283 {
     public static void main(String[] args) {
 
     }
+
     public void moveZeroes(int[] nums) {
         int temp[] = new int[nums.length];
-        int k=0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]!=0){
-                temp[k++]=nums[i];
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                temp[k++] = nums[i];
             }
         }
-        for(int i=0;i<k;i++){
-            nums[i] =temp[i];
+        for (int i = 0; i < k; i++) {
+            nums[i] = temp[i];
         }
-        for(;k<nums.length;k++){
-            nums[k]=0;
+        for (; k < nums.length; k++) {
+            nums[k] = 0;
         }
     }
 }

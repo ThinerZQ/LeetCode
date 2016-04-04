@@ -14,12 +14,13 @@ public class PowerOfThree_326 {
         PowerOfThree_326 powerOfThree_326 = new PowerOfThree_326();
 
     }
+
     public boolean isPowerOfThree(int n) {
 
-        if (n<0){
+        if (n < 0) {
             return false;
         }
-        double temp =Math.log10(n) /Math.log10(3);
-        return temp -(int)temp ==0;
+        double temp = Math.log10(n) / Math.log10(3);
+        return temp - (int) temp == 0;
     }
 }

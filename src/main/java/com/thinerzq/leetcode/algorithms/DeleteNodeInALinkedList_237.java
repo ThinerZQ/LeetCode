@@ -12,8 +12,8 @@ package com.thinerzq.leetcode.algorithms;
 
 /**
  * Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
-
- Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node with value 3, the linked list should become 1 -> 2 -> 4 after calling your function.
+ * <p>
+ * Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node with value 3, the linked list should become 1 -> 2 -> 4 after calling your function.
  */
 public class DeleteNodeInALinkedList_237 {
 
@@ -22,31 +22,31 @@ public class DeleteNodeInALinkedList_237 {
         ListNode node1 = new ListNode(0);
         ListNode node2 = new ListNode(1);
 
-        node1.next=node2;
+        node1.next = node2;
 
         DeleteNodeInALinkedList_237 deleteNodeInALinkedList_237 = new DeleteNodeInALinkedList_237();
         deleteNodeInALinkedList_237.deleteNode(node1);
 
-        System.out.println(node1);;
+        System.out.println(node1);
+        ;
 
     }
 
     public void deleteNode(ListNode node) {
 
 
-
-        if (node.next ==null || node == null){
+        if (node.next == null || node == null) {
             node = null;
-        }else{
+        } else {
             ListNode tempNode = node;
-            while (tempNode.next != null){
+            while (tempNode.next != null) {
 
                 int tempVal = tempNode.next.val;
                 tempNode.val = tempVal;
-                if(tempNode.next.next == null){
+                if (tempNode.next.next == null) {
                     tempNode.next = null;
-                }else{
-                    tempNode=tempNode.next;
+                } else {
+                    tempNode = tempNode.next;
                 }
             }
         }
@@ -54,8 +54,11 @@ public class DeleteNodeInALinkedList_237 {
     }
 
     private static class ListNode {
-             int val;
-             ListNode next;
-             ListNode(int x) { val = x; }
-         }
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
 }

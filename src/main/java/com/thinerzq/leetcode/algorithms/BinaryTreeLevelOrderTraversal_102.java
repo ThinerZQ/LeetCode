@@ -16,31 +16,32 @@ public class BinaryTreeLevelOrderTraversal_102 {
         TreeNode treeNode = new TreeNode(1);
         levelOrder(treeNode);
     }
+
     public static List<List<Integer>> levelOrder(TreeNode root) {
 
-        if (root == null){
+        if (root == null) {
             return new ArrayList<List<Integer>>();
         }
         List<List<Integer>> lists = new ArrayList<List<Integer>>();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             ArrayList<TreeNode> treeNodes = new ArrayList<TreeNode>();
             ArrayList<Integer> vals = new ArrayList<Integer>();
             Iterator<TreeNode> iterator = queue.iterator();
-            while (iterator.hasNext()){
+            while (iterator.hasNext()) {
                 TreeNode temp = iterator.next();
                 treeNodes.add(temp);
                 vals.add(temp.val);
             }
             lists.add(vals);
             queue.clear();
-            for (TreeNode treeNode :treeNodes){
+            for (TreeNode treeNode : treeNodes) {
                 TreeNode temp = treeNode;
-                if (temp.left!=null){
+                if (temp.left != null) {
                     queue.add(temp.left);
                 }
-                if (temp.right!=null){
+                if (temp.right != null) {
                     queue.add(temp.right);
                 }
             }
@@ -48,10 +49,14 @@ public class BinaryTreeLevelOrderTraversal_102 {
         return lists;
 
     }
+
     public static class TreeNode {
-             int val;
-             TreeNode left;
-             TreeNode right;
-             TreeNode(int x) { val = x; }
-         }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

@@ -17,11 +17,11 @@ public class LengthofLastWord_58 {
 
     public int lengthOfLastWord(String s) {
 
-        if (s==null || s.trim().length()==0){
+        if (s == null || s.trim().length() == 0) {
             return 0;
-        }else{
+        } else {
             String[] strings = s.split(" ");
-            return strings[strings.length-1].length();
+            return strings[strings.length - 1].length();
         }
     }
 }

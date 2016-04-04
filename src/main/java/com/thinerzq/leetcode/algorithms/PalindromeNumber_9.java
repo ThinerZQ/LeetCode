@@ -13,13 +13,14 @@ public class PalindromeNumber_9 {
     public static void main(String[] args) {
 
     }
+
     public static boolean isPalindrome(int x) {
 
         String val = String.valueOf(x);
-        int n=val.length();
+        int n = val.length();
         char[] chars = val.toCharArray();
         for (int i = 0; i < n / 2; i++) {
-            if (chars[i] != chars[n-i-1]){
+            if (chars[i] != chars[n - i - 1]) {
                 return false;
             }
         }

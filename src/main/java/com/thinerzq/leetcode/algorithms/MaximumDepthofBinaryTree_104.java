@@ -1,7 +1,5 @@
 package com.thinerzq.leetcode.algorithms;
 
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-import sun.security.pkcs11.P11Util;
 
 import java.util.Random;
 
@@ -20,32 +18,38 @@ public class MaximumDepthofBinaryTree_104 {
         MaximumDepthofBinaryTree_104 maximumDepthofBinaryTree_104 = new MaximumDepthofBinaryTree_104();
 
     }
+
     public int maxDepth(TreeNode root) {
 
-        if (root==null){
+        if (root == null) {
             return 0;
         }
-        if (root.left == null && root.right == null){
+        if (root.left == null && root.right == null) {
             return 1;
         }
-        if (root.left==null){
-            return maxDepth(root.right)+1;
+        if (root.left == null) {
+            return maxDepth(root.right) + 1;
         }
-        if (root.right == null){
-            return  maxDepth(root.left)+1;
+        if (root.right == null) {
+            return maxDepth(root.left) + 1;
         }
 
-        return maxValue(maxDepth(root.left),maxDepth(root.right))+1;
+        return maxValue(maxDepth(root.left), maxDepth(root.right)) + 1;
 
     }
-    public int maxValue(int m,int n){
-        return m>n?m:n;
+
+    public int maxValue(int m, int n) {
+        return m > n ? m : n;
     }
+
     private class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
+
+        TreeNode(int x) {
+            val = x;
+        }
 
     }
 }

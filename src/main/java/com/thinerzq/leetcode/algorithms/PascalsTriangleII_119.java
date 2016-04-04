@@ -16,16 +16,17 @@ public class PascalsTriangleII_119 {
     public static void main(String[] args) {
 
     }
+
     public List<Integer> getRow(int rowIndex) {
 
         List<Integer> pre = new ArrayList<Integer>();
-        pre.add(0,1);
+        pre.add(0, 1);
 
-        for (int i = 0; i<=rowIndex; i++) {
-            List<Integer> tempLists =new ArrayList<Integer>();
-            tempLists.add(0,1);
-            for (int j = 1; j <=i;j++) {
-                tempLists.add(j,pre.get(j-1)+pre.get(j));
+        for (int i = 0; i <= rowIndex; i++) {
+            List<Integer> tempLists = new ArrayList<Integer>();
+            tempLists.add(0, 1);
+            for (int j = 1; j <= i; j++) {
+                tempLists.add(j, pre.get(j - 1) + pre.get(j));
             }
             tempLists.add(1);
             pre = tempLists;

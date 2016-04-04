@@ -17,28 +17,29 @@ public class PascalsTriangle_118 {
 
         System.out.println(generate(4));
     }
+
     public static List<List<Integer>> generate(int numRows) {
 
-        if (numRows ==0){
+        if (numRows == 0) {
             return new ArrayList<List<Integer>>();
         }
         List<List<Integer>> lists = new ArrayList<List<Integer>>();
         ArrayList<Integer> temp = new ArrayList<Integer>();
-        temp.add(0,1);
-        lists.add(0,temp);
-        for (int i = 1; i<numRows; i++) {
+        temp.add(0, 1);
+        lists.add(0, temp);
+        for (int i = 1; i < numRows; i++) {
             List<Integer> tempLists = new ArrayList<Integer>();
 
-            List<Integer> preList =  lists.get(i - 1);
+            List<Integer> preList = lists.get(i - 1);
 
-            tempLists.add(0,1);
-           // int len = (i)/2+1;
-            for (int j = 1; j < i;j++) {
-                tempLists.add(j,preList.get(j-1)+preList.get(j));
-               // tempLists.add(i-j-1,preList.get(j-1)+preList.get(j));
+            tempLists.add(0, 1);
+            // int len = (i)/2+1;
+            for (int j = 1; j < i; j++) {
+                tempLists.add(j, preList.get(j - 1) + preList.get(j));
+                // tempLists.add(i-j-1,preList.get(j-1)+preList.get(j));
             }
             tempLists.add(1);
-            lists.add(i,tempLists);
+            lists.add(i, tempLists);
         }
         return lists;
     }

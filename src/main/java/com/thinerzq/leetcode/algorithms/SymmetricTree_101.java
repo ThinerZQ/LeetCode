@@ -20,17 +20,17 @@ public class SymmetricTree_101 {
 
     public boolean isSymmetric(TreeNode root) {
 
-       //²ã´Î±éÀú
+        //ï¿½ï¿½Î±ï¿½ï¿½ï¿½
         Queue<TreeNode> queue = new LinkedBlockingQueue<TreeNode>();
         queue.add(root);
-        while (root!=null){
-            //ÅÐ¶ÏqueueÖÐÔªËØÊÇ·ñÊÇÁ½±ßÏàµÈµÄ¡£
+        while (root != null) {
+            //ï¿½Ð¶ï¿½queueï¿½ï¿½Ôªï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÈµÄ¡ï¿½
             //TreeNodequeue.toArray()
             TreeNode temp = queue.poll();
-            if (temp.left != null){
+            if (temp.left != null) {
                 queue.add(temp.left);
             }
-            if (temp.right !=null){
+            if (temp.right != null) {
                 queue.add(temp.right);
             }
         }
@@ -38,13 +38,16 @@ public class SymmetricTree_101 {
     }
 
 
-    //²ã´Î±éÀú
+    //ï¿½ï¿½Î±ï¿½ï¿½ï¿½
 
 
     private class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

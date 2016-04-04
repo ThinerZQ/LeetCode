@@ -15,31 +15,32 @@ public class MinimumDepthofBinaryTree_111 {
     public static void main(String[] args) {
 
     }
+
     public int minDepth(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return 0;
         }
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
-        int count=0;
-        while (!queue.isEmpty()){
+        int count = 0;
+        while (!queue.isEmpty()) {
             ArrayList<TreeNode> treeNodes = new ArrayList<TreeNode>();
             Iterator<TreeNode> iterator = queue.iterator();
-            while (iterator.hasNext()){
+            while (iterator.hasNext()) {
                 TreeNode temp = iterator.next();
                 treeNodes.add(temp);
             }
             queue.clear();
             count++;
-            for (TreeNode treeNode :treeNodes){
+            for (TreeNode treeNode : treeNodes) {
                 TreeNode temp = treeNode;
-                if (temp.left!=null){
+                if (temp.left != null) {
                     queue.add(temp.left);
                 }
-                if (temp.right!=null){
+                if (temp.right != null) {
                     queue.add(temp.right);
                 }
-                if (temp.left==null && temp.right ==null){
+                if (temp.left == null && temp.right == null) {
                     return count;
                 }
             }
@@ -47,10 +48,14 @@ public class MinimumDepthofBinaryTree_111 {
         return count;
 
     }
+
     public class TreeNode {
-             int val;
-             TreeNode left;
-             TreeNode right;
-             TreeNode(int x) { val = x; }
-         }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

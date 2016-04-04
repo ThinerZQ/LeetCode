@@ -11,6 +11,7 @@ package com.thinerzq.leetcode.algorithms;
  */
 public class OddEvenLinkedList_258 {
     private ListNode root;
+
     public static void main(String[] args) {
 
         OddEvenLinkedList_258 oddEvenLinkedList_258 = new OddEvenLinkedList_258();
@@ -26,42 +27,44 @@ public class OddEvenLinkedList_258 {
 
 
     }
-    public void insert(int a){
+
+    public void insert(int a) {
         ListNode listNode = new ListNode(a);
         ListNode temp = root;
-        if (root ==null){
+        if (root == null) {
             root = listNode;
             return;
         }
-        while (temp.next != null){
-            temp= temp.next;
+        while (temp.next != null) {
+            temp = temp.next;
         }
         temp.next = listNode;
     }
+
     public ListNode oddEvenList(ListNode head) {
 
-        if(head == null || head.next ==null){
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode last = head;
-        int length=0;
-        while(last.next != null){
+        int length = 0;
+        while (last.next != null) {
             last = last.next;
             length++;
         }
         ListNode index = head.next;
         ListNode pre = head;
 
-        while(index != null && length>0){
+        while (index != null && length > 0) {
 
-            if((index.val%2) ==0){
+            if ((index.val % 2) == 0) {
                 ListNode temp = new ListNode(index.val);
 
                 pre.next = index.next;
 
                 last.next = temp;
                 last = last.next;
-            }else{
+            } else {
                 pre = pre.next;
             }
             index = index.next;
@@ -69,9 +72,13 @@ public class OddEvenLinkedList_258 {
         }
         return head;
     }
+
     private static class ListNode {
-            int val;
-            ListNode next;
-            ListNode(int x) { val = x; }
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

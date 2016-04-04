@@ -16,9 +16,11 @@ public class ImplementStackUsingQueues_225 {
     public static void main(String[] args) {
 
     }
+
     class MyStack {
         Queue queue = new LinkedList();
-        int top=0;
+        int top = 0;
+
         // Push element x onto stack.
         public void push(int x) {
             queue.add(x);

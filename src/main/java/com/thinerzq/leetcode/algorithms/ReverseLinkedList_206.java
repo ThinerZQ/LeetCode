@@ -17,22 +17,23 @@ public class ReverseLinkedList_206 {
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(3);
 
-        node1.next  = node2;
-        node2.next= node3;
+        node1.next = node2;
+        node2.next = node3;
 
         reverseList(node1);
     }
-    public  static  ListNode reverseList(ListNode head) {
 
-        if (head == null || head.next == null){
+    public static ListNode reverseList(ListNode head) {
+
+        if (head == null || head.next == null) {
             return head;
         }
         ListNode index = head.next;
         ListNode pre = head;
-        while (index!=null){
+        while (index != null) {
             ListNode tempNode = index.next;
-            if (pre.next == index){
-                pre.next =null;
+            if (pre.next == index) {
+                pre.next = null;
             }
 
             index.next = pre;
@@ -44,8 +45,11 @@ public class ReverseLinkedList_206 {
     }
 
     private static class ListNode {
-             int val;
-             ListNode next;
-             ListNode(int x) { val = x; }
-         }
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
 }

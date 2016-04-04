@@ -16,20 +16,21 @@ public class RemoveDuplicatesFromSortedList_83 {
     public static void main(String[] args) {
 
     }
+
     public ListNode deleteDuplicates(ListNode head) {
-        if (head==null || head.next==null){
+        if (head == null || head.next == null) {
             return head;
         }
-        ListNode  index = head.next;
+        ListNode index = head.next;
         ListNode pre = head;
         HashSet<Integer> hashSet = new HashSet<Integer>();
         hashSet.add(pre.val);
-        while (index != null){
+        while (index != null) {
 
-            if (!hashSet.contains(index.val)){
+            if (!hashSet.contains(index.val)) {
                 hashSet.add(index.val);
-                pre =index.next;
-            }else{
+                pre = index.next;
+            } else {
                 pre.next = index.next;
             }
 
@@ -37,9 +38,13 @@ public class RemoveDuplicatesFromSortedList_83 {
         }
         return head;
     }
+
     private class ListNode {
-             int val;
-             ListNode next;
-             ListNode(int x) { val = x; }
-         }
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
 }

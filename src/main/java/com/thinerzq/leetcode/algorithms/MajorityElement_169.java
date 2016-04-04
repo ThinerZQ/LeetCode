@@ -10,32 +10,32 @@ package com.thinerzq.leetcode.algorithms;
  * Email: 601097836@qq.com
  */
 
-import jdk.internal.org.objectweb.asm.tree.IincInsnNode;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Given an array of size n, find the majority element. The majority element is the element that appears more than ? n/2 ? times.
-
- You may assume that the array is non-empty and the majority element always exist in the array.
+ * <p>
+ * You may assume that the array is non-empty and the majority element always exist in the array.
  */
 public class MajorityElement_169 {
     public static void main(String[] args) {
 
     }
+
     public int majorityElement(int[] nums) {
-        Map<Integer,Integer> tempMap = new HashMap<Integer, Integer>();
-        for (int temp: nums){
-            if (tempMap.get(temp)!=null){
-                tempMap.put(temp,tempMap.get(temp)+1);
-            }else{
-                tempMap.put(temp,1);
+        Map<Integer, Integer> tempMap = new HashMap<Integer, Integer>();
+        for (int temp : nums) {
+            if (tempMap.get(temp) != null) {
+                tempMap.put(temp, tempMap.get(temp) + 1);
+            } else {
+                tempMap.put(temp, 1);
             }
         }
-        int threshold = nums.length/2;
-        for (Map.Entry<Integer,Integer> temp : tempMap.entrySet()){
-            if (temp.getValue()>threshold){
+        int threshold = nums.length / 2;
+        for (Map.Entry<Integer, Integer> temp : tempMap.entrySet()) {
+            if (temp.getValue() > threshold) {
                 return temp.getKey();
             }
         }

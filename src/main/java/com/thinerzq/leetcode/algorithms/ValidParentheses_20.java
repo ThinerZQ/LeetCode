@@ -15,25 +15,26 @@ public class ValidParentheses_20 {
     public static void main(String[] args) {
 
     }
+
     public boolean isValid(String s) {
 
         Stack<Character> stack = new Stack<Character>();
         char[] characters = s.toCharArray();
-        for (char c: characters){
-            if (c == '(' || c == '{' || c=='['){
+        for (char c : characters) {
+            if (c == '(' || c == '{' || c == '[') {
                 stack.push(c);
-            }else if (c == ')' && !stack.isEmpty() && stack.peek() =='('){
+            } else if (c == ')' && !stack.isEmpty() && stack.peek() == '(') {
                 stack.pop();
-            }else if (c =='}'  && !stack.isEmpty()){
-                if (stack.peek() =='{'){
+            } else if (c == '}' && !stack.isEmpty()) {
+                if (stack.peek() == '{') {
                     stack.pop();
-                }else{
+                } else {
                     return false;
                 }
-            }else if (c == ']'  && !stack.isEmpty()){
-                if (stack.peek() =='['){
+            } else if (c == ']' && !stack.isEmpty()) {
+                if (stack.peek() == '[') {
                     stack.pop();
-                }else{
+                } else {
                     return false;
                 }
             }

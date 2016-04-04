@@ -1,8 +1,5 @@
 package com.thinerzq.leetcode.algorithms;
 
-import com.sun.imageio.plugins.common.I18N;
-import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
-import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 
 import java.util.*;
 
@@ -29,91 +26,93 @@ public class BinaryTreeLevelOrderTraversalII_107 {
             Collections.swap(list, 0, list.size() - 1);
             list2 = list;
             System.out.println(list);
-            list2.set(3,10);
+            list2.set(3, 10);
             System.out.println(list);
         }
         System.out.println(list2);
 
     }
-    public List<List<Integer>> levelOrderBottom_1(TreeNode root){
-        if (root==null)
+
+    public List<List<Integer>> levelOrderBottom_1(TreeNode root) {
+        if (root == null)
             return null;
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         List<List<Integer>> list = new ArrayList<List<Integer>>();
         queue.add(root);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             ArrayList<TreeNode> treeNodes = new ArrayList<TreeNode>();
             ArrayList<Integer> vals = new ArrayList<Integer>();
             Iterator<TreeNode> iterator = queue.iterator();
-            while (iterator.hasNext()){
+            while (iterator.hasNext()) {
                 TreeNode temp = iterator.next();
                 treeNodes.add(temp);
                 vals.add(temp.val);
             }
             list.add(vals);
             queue.clear();
-            for (TreeNode treeNode :treeNodes){
+            for (TreeNode treeNode : treeNodes) {
                 TreeNode temp = queue.poll();
-                if (temp.left!=null){
+                if (temp.left != null) {
                     queue.add(temp.left);
                 }
-                if (temp.right!=null){
+                if (temp.right != null) {
                     queue.add(temp.right);
                 }
             }
         }
-        for (int i=0,j=list.size()-1;i<j;i++,j--){
-            Collections.swap(list,i,j);
+        for (int i = 0, j = list.size() - 1; i < j; i++, j--) {
+            Collections.swap(list, i, j);
         }
         return list;
     }
 
-    public List<List<Integer>> levelOrderBottom_2(TreeNode root){
-        if (root==null)
+    public List<List<Integer>> levelOrderBottom_2(TreeNode root) {
+        if (root == null)
             return new ArrayList<List<Integer>>();
-        int maxDepth =maxDepth(root);
+        int maxDepth = maxDepth(root);
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         List<List<Integer>> list = new ArrayList<List<Integer>>();
         queue.add(root);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             ArrayList<TreeNode> treeNodes = new ArrayList<TreeNode>();
             ArrayList<Integer> vals = new ArrayList<Integer>();
             Iterator<TreeNode> iterator = queue.iterator();
-            while (iterator.hasNext()){
+            while (iterator.hasNext()) {
                 TreeNode temp = iterator.next();
                 treeNodes.add(temp);
                 vals.add(temp.val);
             }
-            list.add(--maxDepth,vals);
+            list.add(--maxDepth, vals);
             queue.clear();
-            for (TreeNode treeNode :treeNodes){
+            for (TreeNode treeNode : treeNodes) {
                 TreeNode temp = treeNode;
-                if (temp.left!=null){
+                if (temp.left != null) {
                     queue.add(temp.left);
                 }
-                if (temp.right!=null){
+                if (temp.right != null) {
                     queue.add(temp.right);
                 }
             }
         }
         return list;
     }
+
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
 
-        if (root==null)
+        if (root == null)
             return null;
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
         queue.add(root);
         stack.push(root);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode temp = queue.poll();
-            if (temp.left!=null){
+            if (temp.left != null) {
                 queue.add(temp.left);
             }
-            if (temp.right!=null){
+            if (temp.right != null) {
                 queue.add(temp.right);
             }
             stack.push(temp.right);
@@ -121,16 +120,16 @@ public class BinaryTreeLevelOrderTraversalII_107 {
         }
 
         int maxDepth = maxDepth(root);
-        int k = (int) (Math.pow(2,maxDepth)-1);
+        int k = (int) (Math.pow(2, maxDepth) - 1);
 
         List<List<Integer>> list = new ArrayList<List<Integer>>();
 
-        for (int i = maxDepth-1; i >=0 ; i--) {
+        for (int i = maxDepth - 1; i >= 0; i--) {
             ArrayList<Integer> arrayList = new ArrayList<Integer>();
-            int m = (int) Math.pow(2,i);
-            while (m>0){
-                TreeNode temp ;
-                if (!stack.empty() && (temp =stack.pop())!=null){
+            int m = (int) Math.pow(2, i);
+            while (m > 0) {
+                TreeNode temp;
+                if (!stack.empty() && (temp = stack.pop()) != null) {
                     arrayList.add(temp.val);
                 }
                 m--;
@@ -144,29 +143,34 @@ public class BinaryTreeLevelOrderTraversalII_107 {
 
     public int maxDepth(TreeNode root) {
 
-        if (root==null){
+        if (root == null) {
             return 0;
         }
-        if (root.left == null && root.right == null){
+        if (root.left == null && root.right == null) {
             return 1;
         }
-        if (root.left==null){
-            return maxDepth(root.right)+1;
+        if (root.left == null) {
+            return maxDepth(root.right) + 1;
         }
-        if (root.right == null){
-            return  maxDepth(root.left)+1;
+        if (root.right == null) {
+            return maxDepth(root.left) + 1;
         }
 
-        return maxValue(maxDepth(root.left),maxDepth(root.right))+1;
+        return maxValue(maxDepth(root.left), maxDepth(root.right)) + 1;
 
     }
-    public int maxValue(int m,int n){
-        return m>n?m:n;
+
+    public int maxValue(int m, int n) {
+        return m > n ? m : n;
     }
+
     public class TreeNode {
-             int val;
-             TreeNode left;
-             TreeNode right;
-             TreeNode(int x) { val = x; }
-         }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }
