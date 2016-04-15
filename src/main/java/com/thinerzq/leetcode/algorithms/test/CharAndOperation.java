@@ -15,6 +15,6 @@ public class CharAndOperation {
         String a ="abcw";
         String b ="baz";
 
-        System.out.println();
+        System.out.println(1<<0);
     }
 }

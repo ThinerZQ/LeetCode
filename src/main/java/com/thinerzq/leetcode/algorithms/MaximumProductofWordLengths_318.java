@@ -36,6 +36,31 @@ public class MaximumProductofWordLengths_318 {
 
     }
 
+    public static int maxProduct_2(String[] words) {
+
+        int size =words.length;
+        int[] mask = new int[size];
+        int max = 0;
+        for (int i = 0; i < size; i++) {
+            char[] temp =words[i].toCharArray();
+            for (char c: temp) {
+                mask[i] = mask[i] | (1<<(c-'a'));
+            }
+        }
+        for (int i = 0; i < size-1; i++) {
+            for (int j = i+1; j < size; j++) {
+                if ( (mask[i] & mask[j])==0) {
+                    int temp = words[i].length() * words[j].length();
+                    if (max < temp) {
+                        max = temp;
+                    }
+                }
+            }
+        }
+        return max;
+
+    }
+
     public static boolean hasIntersection(String a, String b) {
 
         int[] temp = new int[26];
@@ -57,7 +82,7 @@ public class MaximumProductofWordLengths_318 {
 
     public static boolean hasIntersection_1(String a, String b) {
 
-        int a_size = a.length();
+       /* int a_size = a.length();
         int b_size = b.length();
         String temp = "";
         if (a_size < b_size) {
@@ -78,7 +103,7 @@ public class MaximumProductofWordLengths_318 {
                     return true;
                 }
             }
-        }
+        }*/
         return false;
     }
 }
