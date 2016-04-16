@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bea53850-6a3b-4b9e-9465-e68868a9491f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thinerzq/leetcode/algorithms/FindMinimuminRotatedSortedArray_153.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thinerzq/leetcode/algorithms/GrayCode_89.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thinerzq/leetcode/algorithms/UniquePaths_62.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LeetCode.iws" />
@@ -629,7 +626,7 @@
       <workItem from="1460727766284" duration="1477000" />
       <workItem from="1460730817788" duration="5374000" />
       <workItem from="1460774841859" duration="12903000" />
-      <workItem from="1460817358639" duration="5678000" />
+      <workItem from="1460817358639" duration="5750000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1460644101063</created>
@@ -637,11 +634,17 @@
       <option name="project" value="LOCAL" />
       <updated>1460644101063</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1460823182062</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1460823182062</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44694000" />
+    <option name="totallyTimeSpent" value="44766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
