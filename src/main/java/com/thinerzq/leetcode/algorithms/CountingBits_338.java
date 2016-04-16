@@ -14,17 +14,18 @@ public class CountingBits_338 {
     public static void main(String[] args) {
 
     }
+
     public int[] countBits(int num) {
 
-        int result[] = new int[num+1];
-        result[0]=0;
-        for (int i=1;i<=num;i++){
-            int count=0;
-            while (i!=0){
-                i&=(i-1);
+        int result[] = new int[num + 1];
+        result[0] = 0;
+        for (int i = 1; i <= num; i++) {
+            int count = 0;
+            while (i != 0) {
+                i &= (i - 1);
                 count++;
             }
-            result[i]=count;
+            result[i] = count;
         }
         return result;
     }

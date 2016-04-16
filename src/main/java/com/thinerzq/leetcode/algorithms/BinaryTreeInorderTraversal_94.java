@@ -26,29 +26,29 @@ public class BinaryTreeInorderTraversal_94 {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         List<Integer> list = new ArrayList<Integer>();
         //put root
-        if (root!=null){
+        if (root != null) {
             stack.push(root);
 
             // loop to put left
             TreeNode index = root;
-            while (index.left!=null){
+            while (index.left != null) {
                 stack.push(index.left);
                 index = index.left;
             }
             // stack is not null,
-            while (!stack.isEmpty()){
+            while (!stack.isEmpty()) {
                 //get top node
                 TreeNode node = stack.pop();
                 list.add(node.val);
 
                 //judge whether it has right node
-                if (node.right!=null){
+                if (node.right != null) {
                     TreeNode node1 = node.right;
                     stack.push(node1);
 
-                    while (node1.left!=null){
+                    while (node1.left != null) {
                         stack.push(node1.left);
-                        node1 =node1.left;
+                        node1 = node1.left;
                     }
                 }
             }
@@ -61,9 +61,12 @@ public class BinaryTreeInorderTraversal_94 {
 
 
     public class TreeNode {
-             int val;
-             TreeNode left;
-             TreeNode right;
-             TreeNode(int x) { val = x; }
-         }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

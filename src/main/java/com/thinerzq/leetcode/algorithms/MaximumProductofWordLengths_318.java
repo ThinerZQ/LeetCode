@@ -38,18 +38,18 @@ public class MaximumProductofWordLengths_318 {
 
     public static int maxProduct_2(String[] words) {
 
-        int size =words.length;
+        int size = words.length;
         int[] mask = new int[size];
         int max = 0;
         for (int i = 0; i < size; i++) {
-            char[] temp =words[i].toCharArray();
-            for (char c: temp) {
-                mask[i] = mask[i] | (1<<(c-'a'));
+            char[] temp = words[i].toCharArray();
+            for (char c : temp) {
+                mask[i] = mask[i] | (1 << (c - 'a'));
             }
         }
-        for (int i = 0; i < size-1; i++) {
-            for (int j = i+1; j < size; j++) {
-                if ( (mask[i] & mask[j])==0) {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if ((mask[i] & mask[j]) == 0) {
                     int temp = words[i].length() * words[j].length();
                     if (max < temp) {
                         max = temp;

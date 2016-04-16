@@ -20,17 +20,17 @@ public class BinaryTreePreorderTraversal_144 {
 
     public List<Integer> preorderTraversal(TreeNode root) {
 
-        List<Integer> list =new ArrayList<Integer>();
-        if (root!= null){
+        List<Integer> list = new ArrayList<Integer>();
+        if (root != null) {
             Stack<TreeNode> stack = new Stack<TreeNode>();
             stack.push(root);
-            while (!stack.isEmpty()){
+            while (!stack.isEmpty()) {
                 TreeNode temp = stack.pop();
                 list.add(temp.val);
-                if (temp.right!= null){
+                if (temp.right != null) {
                     stack.push(temp.right);
                 }
-                if(temp.left != null) {
+                if (temp.left != null) {
                     stack.push(temp.left);
                 }
             }
@@ -39,9 +39,12 @@ public class BinaryTreePreorderTraversal_144 {
     }
 
     private class TreeNode {
-             int val;
-             TreeNode left;
-             TreeNode right;
-             TreeNode(int x) { val = x; }
-         }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

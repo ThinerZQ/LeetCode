@@ -24,18 +24,18 @@ public class SummaryRanges_228 {
 
         List<String> list = new ArrayList<String>();
         int size = nums.length;
-        if (size ==1){
-            list.add(nums[0]+"");
+        if (size == 1) {
+            list.add(nums[0] + "");
             return list;
         }
         boolean flag = false;
         for (int i = 0, j = 0; i < size - 1; ++i) {
-            if (nums[i+1] == nums[i] + 1) {
+            if (nums[i + 1] == nums[i] + 1) {
                 if (i != size - 2) {
                     continue;
                 }
             }
-            if (i==size-2){
+            if (i == size - 2) {
                 if (nums[i + 1] == nums[i] + 1)
                     i++;
                 else
@@ -48,8 +48,8 @@ public class SummaryRanges_228 {
             }
             j = i + 1;
         }
-        if (flag){
-            list.add(nums[size-1]+"");
+        if (flag) {
+            list.add(nums[size - 1] + "");
         }
         return list;
     }

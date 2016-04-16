@@ -15,27 +15,28 @@ public class ReverseInteger_7 {
 
         reverse(-34563);
     }
+
     public static int reverse(int x) {
 
-        if (x>=0) {
+        if (x >= 0) {
             StringBuilder stringBuilder = new StringBuilder(String.valueOf(x));
             stringBuilder = stringBuilder.reverse();
 
             long n = Long.parseLong(stringBuilder.toString());
-            if (n>Integer.MAX_VALUE){
+            if (n > Integer.MAX_VALUE) {
                 return 0;
-            }else{
-                return (int)n;
+            } else {
+                return (int) n;
             }
-        }else{
+        } else {
             StringBuilder stringBuilder = new StringBuilder(String.valueOf(x).substring(1));
             stringBuilder = stringBuilder.reverse();
 
             long n = Long.parseLong(stringBuilder.toString());
-            if (n>Integer.MAX_VALUE){
+            if (n > Integer.MAX_VALUE) {
                 return 0;
-            }else{
-                return (int)-n;
+            } else {
+                return (int) -n;
             }
         }
     }

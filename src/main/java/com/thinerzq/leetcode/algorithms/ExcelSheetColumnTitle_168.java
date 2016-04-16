@@ -17,20 +17,20 @@ public class ExcelSheetColumnTitle_168 {
 
     public static String convertToTitle(int n) {
 
-        int count=0,sum=0;
-        while (sum<n){
-            sum+=Math.pow(26,++count);
+        int count = 0, sum = 0;
+        while (sum < n) {
+            sum += Math.pow(26, ++count);
         }
         StringBuilder sb = new StringBuilder();
-        for (int i=0;i<count;++i){
-            int k=n%26,m=k;
-            if (k==0){
-                n =(n/26)-1;
-                k=26;
-            }else{
-                n/=26;
+        for (int i = 0; i < count; ++i) {
+            int k = n % 26, m = k;
+            if (k == 0) {
+                n = (n / 26) - 1;
+                k = 26;
+            } else {
+                n /= 26;
             }
-            sb.append(Character.valueOf((char) (k+64)));
+            sb.append(Character.valueOf((char) (k + 64)));
         }
         return sb.reverse().toString();
 

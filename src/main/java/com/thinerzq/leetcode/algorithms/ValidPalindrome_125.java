@@ -24,7 +24,7 @@ public class ValidPalindrome_125 {
                 if (String.valueOf(temp).equalsIgnoreCase(String.valueOf(c))) {
                     j--;
                 } else {
-                    if (((temp >= 97 && temp <= 122) || (temp >= 65 && temp <= 90) || (temp >= 48 && temp <= 57))){
+                    if (((temp >= 97 && temp <= 122) || (temp >= 65 && temp <= 90) || (temp >= 48 && temp <= 57))) {
                         return false;
                     }
                     while (!((temp >= 97 && temp <= 122) || (temp >= 65 && temp <= 90) || (temp >= 48 && temp <= 57))) {
@@ -39,6 +39,7 @@ public class ValidPalindrome_125 {
 
         return true;
     }
+
     public static boolean isPalindrome_1(String s) {
 
         int size = s.length() - 1;
@@ -46,25 +47,24 @@ public class ValidPalindrome_125 {
         StringBuilder sb1 = new StringBuilder();
         StringBuilder sb2 = new StringBuilder();
 
-        for (int i=0;i<=size;i++) {
+        for (int i = 0; i <= size; i++) {
             int c1 = chars[i];
-            int c2 = chars[size-i];
+            int c2 = chars[size - i];
             if ((c1 >= 97 && c1 <= 122) || (c1 >= 65 && c1 <= 90) || (c1 >= 48 && c1 <= 57)) {
-                if ((c1 >= 97 && c1 <= 122)){
-                    sb1.append(c1-32);
-                }else{
+                if ((c1 >= 97 && c1 <= 122)) {
+                    sb1.append(c1 - 32);
+                } else {
                     sb1.append(c1);
                 }
             }
             if ((c2 >= 97 && c2 <= 122) || (c2 >= 65 && c2 <= 90) || (c2 >= 48 && c2 <= 57)) {
-                if ((c2 >= 97 && c2 <= 122)){
-                    sb2.append(c2-32);
-                }else{
+                if ((c2 >= 97 && c2 <= 122)) {
+                    sb2.append(c2 - 32);
+                } else {
                     sb2.append(c2);
                 }
             }
         }
-
 
 
         System.out.println(sb1);

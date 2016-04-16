@@ -13,9 +13,10 @@ public class StringtoInteger_8 {
     public static void main(String[] args) {
 
     }
+
     public int myAtoi(String str) {
 
-        if (str.equals("") || str ==null){
+        if (str.equals("") || str == null) {
             return 0;
         }
         return Integer.parseInt(str);

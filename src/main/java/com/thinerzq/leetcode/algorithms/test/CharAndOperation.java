@@ -12,9 +12,9 @@ package com.thinerzq.leetcode.algorithms.test;
 
 public class CharAndOperation {
     public static void main(String[] args) {
-        String a ="abcw";
-        String b ="baz";
+        String a = "abcw";
+        String b = "baz";
 
-        System.out.println(1<<0);
+        System.out.println(1 << 0);
     }
 }

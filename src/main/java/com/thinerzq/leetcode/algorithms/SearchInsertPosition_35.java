@@ -19,28 +19,26 @@ public class SearchInsertPosition_35 {
     public static int searchInsert(int[] nums, int target) {
 
 
-        int left =0;
-        int right = nums.length -1;
-        boolean  left_flag =false;
-        int middle=0;
-        while (left<=right){
-            middle = left + ((right-left)>>1);
-            if (nums[middle] ==target){
+        int left = 0;
+        int right = nums.length - 1;
+        boolean left_flag = false;
+        int middle = 0;
+        while (left <= right) {
+            middle = left + ((right - left) >> 1);
+            if (nums[middle] == target) {
                 return middle;
-            }else if (nums[middle]<target){
-                left = middle+1;
+            } else if (nums[middle] < target) {
+                left = middle + 1;
                 left_flag = true;
-            }else{
-                right =middle -1;
+            } else {
+                right = middle - 1;
                 left_flag = false;
             }
         }
         if (left_flag)
-            return middle+1;
+            return middle + 1;
         else
             return middle;
-
-
 
 
     }

@@ -20,15 +20,15 @@ public class MinStack_155 {
     public void push(int x) {
 
         dataStack.push(x);
-        if (minStack.isEmpty() || minStack.peek() > x){
+        if (minStack.isEmpty() || minStack.peek() > x) {
             minStack.push(x);
         }
     }
 
     public void pop() {
 
-        if (! dataStack.isEmpty()){
-            if (minStack.peek().equals(dataStack.peek())){
+        if (!dataStack.isEmpty()) {
+            if (minStack.peek().equals(dataStack.peek())) {
                 minStack.pop();
             }
             dataStack.pop();
@@ -38,16 +38,16 @@ public class MinStack_155 {
 
     public int top() {
 
-        if (! dataStack.isEmpty()){
+        if (!dataStack.isEmpty()) {
             return dataStack.peek();
         }
         return 0;
     }
 
     public int getMin() {
-        if (! minStack.isEmpty()){
-            return  minStack.peek();
+        if (!minStack.isEmpty()) {
+            return minStack.peek();
         }
-       return 0;
+        return 0;
     }
 }

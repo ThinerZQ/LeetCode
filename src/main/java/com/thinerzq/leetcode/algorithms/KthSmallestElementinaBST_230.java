@@ -14,51 +14,54 @@ import java.util.Stack;
 public class KthSmallestElementinaBST_230 {
     public int kthSmallest(TreeNode root, int k) {
 
-        if (k==1){
+        if (k == 1) {
             //找到最小，返回
             TreeNode index = root;
             Stack<TreeNode> stack = new Stack<TreeNode>();
             stack.push(index);
-            while (!stack.isEmpty()){
+            while (!stack.isEmpty()) {
                 TreeNode temp = stack.pop();
-                if (temp.right!= null){
+                if (temp.right != null) {
                     stack.push(temp.right);
                 }
-                if(temp.left != null){
+                if (temp.left != null) {
                     stack.push(temp.left);
-                }else{
+                } else {
                     return temp.val;
                 }
             }
             return 0;
 
-        }else{
+        } else {
             //找 k-1 小，返回
             TreeNode index = root;
-            if (root!= null){
+            if (root != null) {
                 TreeNode pre = index;
-                while (index.left != null){
-                    pre =index;
+                while (index.left != null) {
+                    pre = index;
                     index = index.left;
                 }
-                if (root == index){
-                    root =root.right;
-                }else {
-                    if (index.left == null && index.right == null){
-                        pre.left =null;
-                    }else if (index.right!= null){
+                if (root == index) {
+                    root = root.right;
+                } else {
+                    if (index.left == null && index.right == null) {
+                        pre.left = null;
+                    } else if (index.right != null) {
                         pre.left = index.right;
                     }
                 }
             }
-            return kthSmallest(root,k-1);
+            return kthSmallest(root, k - 1);
         }
     }
 
     private class TreeNode {
-             int val;
-             TreeNode left;
-             TreeNode right;
-             TreeNode(int x) { val = x; }
-         }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }
