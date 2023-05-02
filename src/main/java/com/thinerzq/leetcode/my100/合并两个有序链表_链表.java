@@ -1,4 +1,4 @@
-package com.thinerzq.leetcode.cn;
+package com.thinerzq.leetcode.my100;
 
 public class 合并两个有序链表_链表 {
     public static void main(String[] args) {
@@ -6,16 +6,11 @@ public class 合并两个有序链表_链表 {
         ListNode listNode = new ListNode(1);
         ListNode listNode2 = new ListNode(2);
         ListNode listNode3 = new ListNode(4);
-
-
-
         ListNode listNode4 = new ListNode(1);
         ListNode listNode5 = new ListNode(3);
         ListNode listNode6 = new ListNode(4);
         listNode.next = listNode2;
         listNode2.next = listNode3;
-
-
         listNode4.next = listNode5;
         listNode5.next = listNode6;
 
@@ -65,11 +60,6 @@ public class 合并两个有序链表_链表 {
         }
 
         return head;
-
-
-
-
-
     }
 
     public static class ListNode {
